@@ -11,7 +11,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
     ca-certificates \
  && rm -rf /var/lib/apt/lists/*
 
-RUN git clone https://github.com/pnorman/osmborder.git /usr/src/osmborder
+RUN git clone --branch disputed_claim https://github.com/frodrigo/osmborder.git /usr/src/osmborder
 WORKDIR /usr/src/osmborder/build
 RUN cmake .. && make && make install
 
